@@ -22,4 +22,4 @@ await user2.save();
 // Vorteil: Speichert direkt den User ohne save() schreiben zu müssen
 await Contact.create({ name: "Jessica Smith", email: "jessice@smithysmith.com" });
 
-mongoose.disconnect()
+mongoose.disconnect();
