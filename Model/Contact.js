@@ -6,8 +6,7 @@ const contactSchema = new Schema({
         required: true,
     },
     email: String,
-},
-);
+});
 
 export const Contact = mongoose.model("Contact", contactSchema);
 
