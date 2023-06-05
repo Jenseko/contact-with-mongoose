@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { Contact } from './Model/Contact.js';
+import { Todo } from './Model/Todo.js';
 
 
 await mongoose.connect('mongodb://localhost:27017/contact-with-mongodb')
@@ -8,18 +8,17 @@ await mongoose.connect('mongodb://localhost:27017/contact-with-mongodb')
 
 
 // Speichern/Create eines neues Users
-const user = new Contact();
-user.name = "Billy Smith";
-user.email = "billy@shmithysmith.com";
+const user = new Todo();
+user.todo = "Wäsche waschen";
 await user.save();
 
 
 // Option 2: User zu erstellen
-const user2 = new Contact({ name: "Sarah Parker", email: "parker@park.park" });
+const user2 = new Todo({ todo: "Auto waschen" });
 await user2.save();
 
 
 // Vorteil: Speichert direkt den User ohne save() schreiben zu müssen
-await Contact.create({ name: "Jessica Smith", email: "jessice@smithysmith.com" });
+await Todo.create({ todo: "Geschenk besorgen" });
 
 mongoose.disconnect();

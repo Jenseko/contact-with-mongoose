@@ -1,6 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import { Contact } from './Model/Contact.js';
+import { Todo } from './Model/Todo.js';
 
 // ----- SETUP --------------------------------------
 
@@ -14,17 +14,17 @@ app.use(express.json());
 
 // ----- GET -----------------------------------------
 
-app.get('/api/contacts', async (req, res) => {
-    const contacts = await Contact.find();
-    res.send(contacts);
+app.get('/api/todos', async (req, res) => {
+    const todos = await Todo.find();
+    res.send(todos);
 });
 
 // ----- POST -----------------------------------------
 
 
-app.post('/api/contacts', async (req, res) => {
-    const newContact = await Contact.create(req.body);
-    res.send(newContact);
+app.post('/api/todos', async (req, res) => {
+    const newTodo = await Todo.create(req.body);
+    res.send(newTodo);
 });
 
 // -----------------------------------------------------

@@ -1,12 +1,12 @@
 import mongoose, { Schema } from 'mongoose';
 
-const contactSchema = new Schema({
-    name: {
+const todoSchema = new Schema({
+    todo: {
         type: String,
         required: true,
     },
     email: String,
 });
 
-export const Contact = mongoose.model("Contact", contactSchema);
+export const Todo = mongoose.model("Todo", todoSchema);
 
