@@ -1,12 +1,12 @@
-import express from "express";
+import express from 'express';
 import mongoose from 'mongoose';
-import { Contact } from "./Model/Contact.js";
+import { Contact } from './Model/Contact.js';
 
 // ----- SETUP --------------------------------------
 
-mongoose.connect("mongodb://localhost:27017/contact-with-mongoose");
+mongoose.connect('mongodb://localhost:27017/contact-with-mongoose');
 
-const PORT = process.env.PORT || "3001";
+const PORT = process.env.PORT || '3001';
 const app = express();
 
 app.use(express.json());
@@ -17,13 +17,14 @@ app.use(express.json());
 app.get('/api/contacts', async (req, res) => {
     const contacts = Contact.find();
     res.send(contacts);
-})
+});
 
 // ----- POST -----------------------------------------
 
 
-app.post("/api/contact", async (req, res) => {
-    const newContact = await Contact.create(re.body);
+app.post('/api/contacts', async (req, res) => {
+    const newContact = await Contact.create(req.body);
+    res.send(newContact);
 });
 
 // -----------------------------------------------------

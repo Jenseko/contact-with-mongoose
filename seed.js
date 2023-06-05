@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
-import { Contact } from "./Model/Contact.js";
+import { Contact } from './Model/Contact.js';
 
 
-await mongoose.connect("mongodb://localhost:27017/contact-with-mongodb")
+await mongoose.connect('mongodb://localhost:27017/contact-with-mongodb')
     .then(console.log)
     .catch(console.error)
 
