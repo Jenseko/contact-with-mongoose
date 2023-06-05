@@ -15,7 +15,7 @@ app.use(express.json());
 // ----- GET -----------------------------------------
 
 app.get('/api/contacts', async (req, res) => {
-    const contacts = Contact.find();
+    const contacts = await Contact.find();
     res.send(contacts);
 });
 
