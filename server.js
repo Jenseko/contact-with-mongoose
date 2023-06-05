@@ -20,6 +20,6 @@ app.post("/api/contact", async (req, res) => {
 
 
 
-application.listen(PORT, () => {
+app.listen(PORT, () => {
     console.log("Server started on PORT:", PORT);
 });
